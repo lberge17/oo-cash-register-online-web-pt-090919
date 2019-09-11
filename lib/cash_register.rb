@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessible :total, :cash_register, :discount
+  attr_accessor :total, :cash_register, :discount
   
   def cash_register
     @cash_register = self.new
