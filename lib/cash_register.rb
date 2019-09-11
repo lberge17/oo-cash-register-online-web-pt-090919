@@ -30,7 +30,7 @@ class CashRegister
     @@all.each do |id|
       id.items.each do |item|
         if item == @items[-1]
-          @total -= id.price
+          @total -= @price
         end
       end
     end
