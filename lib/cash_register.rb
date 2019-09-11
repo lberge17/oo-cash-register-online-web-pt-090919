@@ -6,4 +6,9 @@ class CashRegister
     @total = 0
   end
   
+  def cash_register_with_discount(n)
+    @cash_register = self.new
+    @total = -n
+  end
+  
 end
