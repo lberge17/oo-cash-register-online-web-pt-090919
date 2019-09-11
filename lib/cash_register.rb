@@ -1,10 +1,12 @@
 class CashRegister
   attr_accessor :total, :cash_register, :discount, :items, :price
+  @@all = []
   
   def initialize(discount = 0)
     @total = 0
     @discount = discount
     @items = []
+    @@all << self
   end
   
   def add_item(item, price, quantity = 1)
@@ -25,9 +27,9 @@ class CashRegister
   end
   
   def void_last_transaction
-    self.items.each do |item|
-      if item == @items[-1]
-        total -= @price
+    @@all.each do |id|
+      if id.item == @items[-1]
+        total -= id.price
       end
     end
     @items.pop()
