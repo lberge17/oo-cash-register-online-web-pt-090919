@@ -25,7 +25,11 @@ class CashRegister
   end
   
   def void_last_transaction
-    @total -= @items[-1].itself.price
+    self.items.each do |item|
+      if item == @items[-1]
+        total -= @price
+      end
+    end
     @items.pop()
   end
   
