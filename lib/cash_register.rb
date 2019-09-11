@@ -7,8 +7,7 @@ class CashRegister
   end
   
   def cash_register_with_discount(n)
-    @cash_register = self.new
-    @total = 0
+    cash_register
     @discount = 20
   end
   
