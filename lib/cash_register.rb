@@ -29,7 +29,7 @@ class CashRegister
   def void_last_transaction
     @@all.each do |id|
       id.items.each do |item|
-        if item == @@items[-1]
+        if item == @items[-1]
           price -= id.price
         end
       end
