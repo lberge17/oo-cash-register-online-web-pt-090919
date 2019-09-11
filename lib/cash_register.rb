@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessible :total :cash_register
+  attr_accessible :total, :cash_register, :discount
   
   def cash_register
     @cash_register = self.new
@@ -8,7 +8,8 @@ class CashRegister
   
   def cash_register_with_discount(n)
     @cash_register = self.new
-    @total = -n
+    @total = 0
+    @discount = 20
   end
   
 end
